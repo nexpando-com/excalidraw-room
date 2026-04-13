@@ -21,8 +21,8 @@ WORKDIR /excalidraw-room
 
 COPY --from=builder /excalidraw-room/package.json ./
 COPY --from=builder /excalidraw-room/yarn.lock ./
-COPY --from=builder /excalidraw-room/node_modules ./
-COPY --from=builder /excalidraw-room/dist ./
+COPY --from=builder /excalidraw-room/node_modules ./node_modules
+COPY --from=builder /excalidraw-room/dist ./dist
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
